@@ -63,7 +63,7 @@ from DaisyX.modules.helper_funcs.misc import paginate_modules
 from DaisyX.modules.helper_funcs.readable_time import get_readable_time
 
 PM_START_TEXT = """
-Hello THERE, I'm [𝚃𝙴𝚂𝚂𝙰](https://telegra.ph/file/38ca2f1d0e5e7672e3232.jpg)
+Hello THERE, I'm 𝚃𝙴𝚂𝚂𝙰
 I am 𝙰 𝙿𝙾𝚆𝙴𝚁𝙵𝚄𝙻𝙻 𝙱𝙾𝚃 𝙹𝚄𝚂𝚃 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝚂𝙴𝙴 𝙼𝚈 𝙿𝙾𝚅𝙴𝚁𝚂
 
 ✪ Make sure you read *𝙷𝙴𝙻𝙿* Section Below ✪ 
@@ -201,8 +201,9 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            update.effective_message.reply_text(
-                PM_START_TEXT,
+            update.effective_message.reply_photo(
+                photo="https://telegra.ph/file/38ca2f1d0e5e7672e3232.jpg",
+                caption=PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
